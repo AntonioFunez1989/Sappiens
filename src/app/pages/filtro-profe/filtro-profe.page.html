@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="end">
+      <ion-menu-button menu="first"></ion-menu-button>
+    </ion-buttons>
+  
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="animate__animated animate__bounceInLeft animate__faster ion-text-center">Busco...</ion-title>
+  
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-text color="primary"> 
+    <h3 class="animate__animated  animate__bounceInRight animate__faster ion-text-center ion-padding">{{info}}</h3> 
+  </ion-text>
+
+  <h4><p></p></h4>
+
+  <ion-list>
+
+    <ion-item (click)="pago()" [color]="color1"><h5 id="idPago">Forma de pago</h5>
+      <ion-icon slot="end" [name]="iconoFlecha"  ></ion-icon>
+      <ion-icon slot="start" name="cash-outline" ></ion-icon>
+    </ion-item>
+
+        <ion-text *ngIf="numero1" color="primary">
+          <ion-segment (ionChange)="segmentChangedPay($event)" value="Pagado">
+            <ion-segment-button *ngFor="let o of optPago" [value]="o.nombre">
+              <ion-label>{{o.nombre}}</ion-label>
+              <ion-icon [name]="o.icon"></ion-icon>
+            </ion-segment-button>
+          </ion-segment>
+          <ion-item *ngIf="boolPago" id="formaPago">
+            <ion-range (ionChange)="rangeChanged($event)" min="5" max="20" step="1" dual-knobs pin color="primary">
+              <ion-icon color="primary" slot="start" size="small" name="cash"></ion-icon>
+              <ion-icon color="primary" slot="end" name="cash"></ion-icon>
+            </ion-range>
+          </ion-item>
+        </ion-text>
+
+        <h4><p></p></h4>
+
+    <ion-item (click)="modo()" [color]="color2"><h5 id="idMod">Modalidad</h5>
+      <ion-icon slot="end" [name]="iconoFlechaMOD"></ion-icon>
+      <ion-icon slot="start" name="home-outline"></ion-icon>
+    </ion-item>
+
+        <ion-text *ngIf="numero2"  color="primary">
+          <ion-segment (ionChange)="segmentChanged($event)" value="Online">
+            <ion-segment-button *ngFor="let l of optLugar" [value]="l.nombreLugar">
+              <ion-label>{{l.nombreLugar}}</ion-label>
+              <ion-icon [name]="l.iconoLugar"></ion-icon>
+            </ion-segment-button>
+          </ion-segment>
+          
+          <div *ngIf="boolUbi">
+            <form class="form">
+              <input class="redondeadonorelieve ion-padding" placeholder="Ubicacion" type="required"
+              ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
+            </form>
+          </div>
+        </ion-text>
+
+  </ion-list>
+
+  <ion-fab (click)="pasarPag()" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button >
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

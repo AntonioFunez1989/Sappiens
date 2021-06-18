@@ -1,0 +1,8 @@
+<ion-list class="animate__animated animate__fadeInLeft animate__faster">
+
+  <ion-item *ngFor="let iP1 of iPop6" [routerLink]="iP1.redirecTo" detail (click)="onClick(iP1.name)">
+    <ion-icon [name]="iP1.icon" slot="start" color="primary"></ion-icon>
+  {{iP1.name}}
+  </ion-item>
+
+</ion-list>

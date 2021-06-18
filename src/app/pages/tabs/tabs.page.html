@@ -1,0 +1,14 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom" >
+
+    <ion-tab-button *ngFor="let ca of cargaTab" [routerLink]="ca.redirecTo">
+
+      <ion-icon [name]="ca.icon" color="primary"></ion-icon>
+      <label>{{ca.name}}</label>
+
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>

@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar color="primary">
+
+      <ion-buttons slot="end">
+        <ion-menu-button menu="first"></ion-menu-button>
+      </ion-buttons>
+
+      <ion-buttons slot="start">
+        <ion-button defaultHref="/"></ion-button>
+      </ion-buttons>
+
+      <ion-title class="animate__animated animate__bounceInLeft animate__faster ion-text-center">Categorias</ion-title>
+    
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list class="animate__animated animate__pulse animate__faster">
+
+    <ion-item *ngFor="let a of asig" detail (click)="presentPopover(a.present, $event)">
+      <ion-icon [name]="a.icon" slot="start" color="primary"></ion-icon>
+      {{a.name}}
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
+

@@ -1,0 +1,51 @@
+
+<ion-content class="ion-padding">
+
+  <ion-slides class="mainSlide">
+
+    <ion-slide>
+
+      <form>
+        <ion-grid fixed>
+
+          <ion-row>
+            <ion-col>
+              <img class="animate__animated animate__pulse" src="/assets/avatars/sappiens.png">
+            </ion-col>
+          </ion-row>
+        
+
+          <ion-row>
+            <ion-col>
+              <ion-button class="button button-full" type="submit"
+                          color="primary"
+                          shape="round" 
+                          (click)="onClick()"> <!-- <-- ON CLICK LOGIN GOOGLE-->
+                          <ion-icon name="logo-google"></ion-icon>
+                        <h2>oogle</h2>
+                        <ion-icon class="animate__animated animate__bounceInLeft animate__faster" name="chevron-forward-outline"></ion-icon>
+              </ion-button>
+              
+            </ion-col>
+            <ion-col>
+              <ion-button class="button button-full" type="submit"
+                          color="primary"
+                          shape="round" 
+                          (click)="out()"> <!-- <-- ON CLICK LOGIN GOOGLE-->
+                          <ion-icon name="logo-google"></ion-icon>
+                        <h2>OUT</h2>
+                        <ion-icon class="animate__animated animate__bounceInLeft animate__faster" name="chevron-forward-outline"></ion-icon>
+              </ion-button>
+              
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+      </form>
+    
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>
+

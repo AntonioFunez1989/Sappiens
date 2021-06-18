@@ -1,5 +1,8 @@
 {
   "name": "Sappiens",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
   "type": "angular"
 }

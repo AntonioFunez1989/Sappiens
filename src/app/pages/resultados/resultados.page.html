@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="end">
+      <ion-menu-button menu="first"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title class="animate__animated animate__bounceInLeft animate__faster ion-text-center">Resultados</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+<ion-list class="animate__animated animate__pulse animate__faster">
+
+  <ion-item *ngFor="let a of array" detail>{{a.name}}{{a.mail}} 
+     <img [src]="a.photo" slot="start" class="imgRedonda">  <!---->
+  </ion-item>
+
+</ion-list>
+
+</ion-content>
